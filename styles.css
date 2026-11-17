@@ -452,7 +452,7 @@ a:hover { color: var(--red); }
   background: var(--green-tint);
   border-right: 1px solid var(--line);
 }
-.sister-card__avatar { position: relative; width: 160px; height: 160px; margin-bottom: 24px; }
+.sister-card__avatar { position: relative; width: 160px; height: 160px; margin-bottom: 24px; border-radius: 50%; }
 .sister-card__avatar > img {
   width: 160px;
   height: 160px;
