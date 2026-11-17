@@ -1,5 +1,5 @@
 # veromedic
-The official website for the clinical business, Veromed Private Clinic (Veromed Primary Health Care), Groblersdal, Limpopo.
+The official website for Veromed Private Clinic (Veromed Primary Health Care), Groblersdal, Limpopo: https://veromedclinic.co.za
 
 A static, single-page site with no build step:
 
@@ -11,3 +11,5 @@ A static, single-page site with no build step:
 To preview it, open `index.html` in a browser. To deploy, upload the folder to any static host (Netlify, Vercel, GitHub Pages, cPanel).
 
 Opening hours are set in two places: the HTML (`index.html`) and the `HOURS` table in `script.js`. Update both when they change.
+
+Hosted on GitHub Pages from `main` (root), with the custom domain set in `CNAME`. `assets/og-image.png` is the preview image shown when the link is shared on WhatsApp or Facebook. After changing `styles.css` or `script.js`, increase the `?v=` number on their links in `index.html` so browsers fetch the new files.
