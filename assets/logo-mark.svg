@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Veromed">
+  <circle cx="50" cy="50" r="43" fill="#fff" stroke="#1E7B34" stroke-width="9"/>
+  <path d="M41 22h18v19h19v18H59v19H41V59H22V41h19z" fill="#D7262B"/>
+</svg>
