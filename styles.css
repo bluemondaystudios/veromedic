@@ -428,88 +428,101 @@ a:hover { color: var(--red); }
 .services__note { margin-top: 44px; font-size: 1.125rem; color: var(--muted); }
 .services__note a { font-weight: 700; }
 
-/* Meet Sister Matsepe */
-.sister { background: var(--white); border-top: 1px solid var(--line); }
-.sister__grid {
+/* Meet Sister Matsepe: an identity card */
+.sister { border-top: 1px solid var(--line); }
+.sister-card {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: 88px;
-  align-items: center;
-}
-.sister__photo {
-  position: relative;
-  margin: 0 28px 28px 0;
-}
-.sister__photo::before {
-  /* offset green frame behind the portrait */
-  content: "";
-  position: absolute;
-  inset: 28px -28px -28px 28px;
-  border: 3px solid var(--green);
-  border-radius: var(--radius);
-}
-.sister__photo > img {
-  position: relative;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 12%;
+  grid-template-columns: 320px minmax(0, 1fr);
+  max-width: 1040px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--green);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  background: var(--green-tint);
+  overflow: hidden;
 }
-.sister__badge {
+.sister-card__id {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 32px 40px;
+  background: var(--green-tint);
+  border-right: 1px solid var(--line);
+}
+.sister-card__avatar { position: relative; width: 160px; height: 160px; margin-bottom: 24px; }
+.sister-card__avatar > img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--white);
+  box-shadow: 0 0 0 4px var(--green), 0 10px 24px -10px rgba(17,27,39,.35);
+}
+.sister-card__badge {
   position: absolute;
-  left: -24px;
-  bottom: 40px;
+  right: 0;
+  bottom: 4px;
   display: grid;
   place-items: center;
-  width: 88px;
-  height: 88px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: var(--white);
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 10px -4px rgba(17,27,39,.35);
 }
-.sister h2 { font-size: clamp(2.5rem, 5vw, 3.75rem); }
-.sister__role {
+.sister-card__kicker {
+  font-family: var(--brand);
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.sister-card h2 { font-size: 2.125rem; }
+.sister-card__role {
   font-family: var(--brand);
   font-weight: 600;
-  font-size: .875rem;
+  font-size: .75rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--muted);
-  margin: 14px 0 32px;
+  margin: 10px 0 28px;
 }
-.sister__lead {
+.sister-card__actions { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 220px; }
+.sister-card__body { padding: 48px 52px 44px; }
+.sister-card__lead {
   font-family: var(--serif);
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 1.35;
   color: var(--green-dark);
-  padding-left: 22px;
+  padding-left: 20px;
   border-left: 4px solid var(--red);
+  margin-bottom: 24px;
 }
-.sister__copy > p:not(.eyebrow):not(.sister__role):not(.sister__lead) { color: var(--muted); }
-.sister__focus {
+.sister-card__body > p:not(.sister-card__lead) { color: var(--muted); }
+.sister-card__focus {
   list-style: none;
-  margin: 36px 0;
+  margin: 32px 0 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 2px solid var(--navy);
 }
-.sister__focus li { padding: 18px 20px 0 0; }
-.sister__focus li + li { padding-left: 20px; border-left: 1px solid var(--line); }
-.sister__focus strong {
+.sister-card__focus li { padding: 16px 18px 0 0; }
+.sister-card__focus li + li { padding-left: 18px; border-left: 1px solid var(--line); }
+.sister-card__focus strong {
   display: block;
   font-family: var(--serif);
-  font-size: 1.1875rem;
+  font-size: 1.125rem;
   color: var(--navy);
   margin-bottom: 4px;
 }
-.sister__focus span { display: block; font-size: 1rem; color: var(--muted); line-height: 1.45; }
-.sister__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.sister-card__focus span { display: block; font-size: .9375rem; color: var(--muted); line-height: 1.45; }
 
 /* About */
 .about {
@@ -685,8 +698,9 @@ address { font-style: normal; font-size: 1.25rem; color: var(--navy); margin-bot
   .hero__grid { grid-template-columns: 1fr; gap: 48px; padding-top: 64px; padding-bottom: 72px; }
   .visit-card { max-width: 560px; }
   .about__grid { grid-template-columns: 1fr; gap: 48px; }
-  .sister__grid { grid-template-columns: 1fr; gap: 56px; }
-  .sister__photo { max-width: 440px; }
+  .sister-card { grid-template-columns: 1fr; }
+  .sister-card__id { border-right: 0; border-bottom: 1px solid var(--line); }
+  .sister-card__actions { flex-direction: row; justify-content: center; max-width: none; }
   .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .service, .service:not(:nth-child(3n+1)) { padding: 36px 28px 40px 0; border-left: 0; }
   .service:nth-child(even) { padding-left: 28px; padding-right: 0; border-left: 1px solid var(--line); }
@@ -749,14 +763,12 @@ address { font-style: normal; font-size: 1.25rem; color: var(--navy); margin-bot
   .service:nth-child(3n)::after,
   .service:nth-child(even)::after { right: 0; top: 32px; }
   .visit__map, .visit__map iframe { min-height: 340px; }
-  .sister__photo { margin: 0 20px 20px 0; }
-  .sister__photo::before { inset: 20px -20px -20px 20px; }
-  .sister__badge { width: 72px; height: 72px; left: -10px; bottom: 28px; }
-  .sister__badge img { width: 46px; height: 46px; }
-  .sister__lead { font-size: 1.3125rem; }
-  .sister__focus { grid-template-columns: 1fr; }
-  .sister__focus li, .sister__focus li + li { padding: 16px 0; border-left: 0; border-bottom: 1px solid var(--line); }
-  .sister__actions .btn { width: 100%; }
+  .sister-card__id { padding: 40px 20px 32px; }
+  .sister-card__body { padding: 32px 22px 28px; }
+  .sister-card__lead { font-size: 1.3125rem; }
+  .sister-card__actions { flex-direction: column; }
+  .sister-card__focus { grid-template-columns: 1fr; }
+  .sister-card__focus li, .sister-card__focus li + li { padding: 14px 0; border-left: 0; border-bottom: 1px solid var(--line); }
   .big-phone { font-size: 1.875rem; }
   .cta__actions { width: 100%; }
   .cta__actions .btn { flex: 1 1 100%; }
